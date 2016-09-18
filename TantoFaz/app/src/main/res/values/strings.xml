@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">TantoFaz</string>
+    <string name="label_nome">Nome:</string>
+    <string name="hint_nome">Digite seu nome</string>
+    <string name="label_button">Enviar</string>
+    <string name="welcome">Boas Vindas</string>
+</resources>
