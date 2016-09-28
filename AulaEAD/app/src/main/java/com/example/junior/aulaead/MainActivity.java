@@ -1,6 +1,7 @@
 package com.example.junior.aulaead;
 
 import android.Manifest;
+import android.app.SearchManager;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
@@ -11,7 +12,6 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.TextView;
 
 import java.io.File;
 
@@ -82,13 +82,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void pesquisar(View v) {
-
-        TextView pesquisa = (TextView) findViewById(R.id.editText);
-        String url = "http://www.google.com/#q=";
-        String query = pesquisa.getText().toString().replace(" ", "+").trim();
-        String final_url = url + query;
-        Uri uri = Uri.parse(final_url);
-        startActivity(new Intent(Intent.ACTION_VIEW, uri));
+        Intent it = new Intent(Intent.ACTION_WEB_SEARCH);
+        it.putExtra(SearchManager.QUERY,"danone");
+        startActivity(it);
     }
 
 
