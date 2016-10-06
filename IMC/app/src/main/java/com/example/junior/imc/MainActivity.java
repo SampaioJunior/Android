@@ -55,8 +55,8 @@ public class MainActivity extends AppCompatActivity {
         if (requestCode == COD_ACTIVITY){
             TextView imc = (TextView) findViewById(R.id.imc);
             if (resultCode == RESULT_OK && data.hasExtra("imc")){
-                String campoImc = data.getExtras().getString("imc");
-                imc.setText(campoImc);
+                String campoImc = data.getExtras().getString("calculo");
+                imc.setText("IMC: " + campoImc);
             }
         }
     }

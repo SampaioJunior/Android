@@ -10,20 +10,24 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.junior.imc.Imc">
 
-    <TextView
-        android:text="IMC:"
+    <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="IMC:"
+        android:ems="10"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
         android:id="@+id/imc" />
 
-    <TextView
-        android:text="Resultado"
+    <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="Resultado:"
+        android:ems="10"
         android:layout_below="@+id/imc"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="26dp"
+        android:layout_marginTop="17dp"
         android:id="@+id/resultado" />
 </RelativeLayout>
