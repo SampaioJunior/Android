@@ -15,39 +15,43 @@ public class Imc extends AppCompatActivity {
         Intent it = getIntent();
         Bundle params = it.getExtras();
 
-        String calculo = params.getString("calculo");
+        String calculo = params.getString("resultado");
 
         TextView imc = (TextView) findViewById(R.id.imc);
         imc.setText(calculo);
 
-        Double calculoImc = Double.parseDouble(calculo.replace("imc: ",""));
+
+        Double calculoImc = Double.parseDouble(calculo.replace("IMC: ", ""));
         String resultado = "Resultado: ";
 
-        if (calculoImc >= 40){
+        if (calculoImc >= 40) {
             resultado += "Obesidade Morbida";
         }
-        if (calculoImc >= 35 && calculoImc < 40){
+        if (calculoImc >= 35 && calculoImc < 40) {
             resultado += "Obesidade Severa";
         }
-        if (calculoImc >= 30 && calculoImc < 35){
+        if (calculoImc >= 30 && calculoImc < 35) {
             resultado += "Obesidade Grau I";
         }
-        if (calculoImc >= 25 && calculoImc < 30){
+        if (calculoImc >= 25 && calculoImc < 30) {
             resultado += "Sobrepeso";
         }
-        if (calculoImc >= 18.5 && calculoImc < 25){
+        if (calculoImc >= 18.5 && calculoImc < 25) {
             resultado += "Saudavel";
         }
-        if (calculoImc >= 17 && calculoImc < 18.5){
+        if (calculoImc >= 17 && calculoImc < 18.5) {
             resultado += "Magraza leve";
         }
-        if (calculoImc >= 16 && calculoImc < 17){
+        if (calculoImc >= 16 && calculoImc < 17) {
             resultado += "Magreza Moderada";
         }
-        if (calculoImc < 16){
+        if (calculoImc < 16) {
             resultado += "Magreza grave";
         }
+
         TextView campoResultado = (TextView) findViewById(R.id.resultado);
         campoResultado.setText(resultado);
     }
 }
+
+

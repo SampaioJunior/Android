@@ -14,48 +14,48 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:text="Nome:"
         android:ems="10"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
         android:id="@+id/nome"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:hint="Nome:" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:text="Telefone:"
         android:ems="10"
         android:layout_below="@+id/nome"
         android:layout_alignParentStart="true"
         android:layout_marginTop="14dp"
         android:id="@+id/telefone"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:hint="Telefone:" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:text="E-mail:"
         android:ems="10"
         android:layout_below="@+id/telefone"
         android:layout_alignParentStart="true"
         android:layout_marginTop="18dp"
         android:id="@+id/email"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:hint="E-mail:" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:text="Peso:"
         android:ems="10"
         android:layout_below="@+id/email"
         android:layout_alignParentStart="true"
         android:layout_marginTop="12dp"
         android:id="@+id/peso"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:hint="Peso:" />
 
     <EditText
         android:layout_width="wrap_content"

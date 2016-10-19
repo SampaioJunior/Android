@@ -14,20 +14,23 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:text="IMC:"
-        android:ems="10"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
-        android:id="@+id/imc" />
+        android:ems="17"
+        android:id="@+id/imc"
+        android:layout_alignParentEnd="true"
+        android:enabled="true"
+        android:hint="IMC" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:text="Resultado:"
         android:ems="10"
         android:layout_below="@+id/imc"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="17dp"
-        android:id="@+id/resultado" />
+        android:layout_marginTop="21dp"
+        android:id="@+id/resultado"
+        android:layout_alignParentEnd="true"
+        android:hint="Resultado:" />
+
+
 </RelativeLayout>

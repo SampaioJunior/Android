@@ -9,7 +9,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-    public static final int COD_ACTIVITY = 1;
+    public static final int COD_ACTIVITY = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,12 +21,17 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent it = new Intent(MainActivity.this, Imc.class);
+                TextView conta = (TextView) findViewById(R.id.calculo);
+
+                Bundle params = new Bundle();
+                params.putString("resultado",conta.getText().toString());
+                it.putExtras(params);
                 startActivity(it);
             }
         });
     }
 
-    public void dados(View v){
+    public void dados(View v) {
         EditText nome = (EditText) findViewById(R.id.nome);
         EditText telefone = (EditText) findViewById(R.id.telefone);
         EditText email = (EditText) findViewById(R.id.email);
@@ -39,23 +44,25 @@ public class MainActivity extends AppCompatActivity {
         String pesoUser = peso.getText().toString();
         String alturaUser = altura.getText().toString();
 
-        Intent it = new Intent(MainActivity.this,SegundaTela.class);
+        Intent it = new Intent(MainActivity.this, SegundaTela.class);
         Bundle params = new Bundle();
-        params.putString("nome",nomeUser);
-        params.putString("telefone",telefoneUser);
-        params.putString("email",emailUser);
+        params.putString("nome", nomeUser);
+        params.putString("telefone", telefoneUser);
+        params.putString("email", emailUser);
         params.putString("peso", pesoUser);
         params.putString("altura", alturaUser);
 
         it.putExtras(params);
-        startActivityForResult(it,COD_ACTIVITY);
+        startActivityForResult(it, COD_ACTIVITY);
     }
+
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data){
-        if (requestCode == COD_ACTIVITY){
-            TextView imc = (TextView) findViewById(R.id.imc);
-            if (resultCode == RESULT_OK && data.hasExtra("imc")){
-                String campoImc = data.getExtras().getString("calculo");
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == COD_ACTIVITY) {
+            TextView imc = (TextView) findViewById(R.id.calculo);
+
+            if (resultCode == RESULT_OK && data.hasExtra("resultado")) {
+                String campoImc = data.getExtras().getString("resultado");
                 imc.setText("IMC: " + campoImc);
             }
         }

@@ -9,7 +9,7 @@ import android.widget.EditText;
 
 public class SegundaTela extends AppCompatActivity {
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_segunda_tela);
 
@@ -54,19 +54,18 @@ public class SegundaTela extends AppCompatActivity {
                 String pesoUser = peso.getText().toString();
                 String alturaUser = altura.getText().toString();
 
-                Double calculo = Double.parseDouble(pesoUser) / Double.parseDouble(alturaUser) * Double.parseDouble(alturaUser);
+                Double resultado = Double.parseDouble(pesoUser) / (Double.parseDouble(alturaUser) * Double.parseDouble(alturaUser));
+
                 Bundle params = new Bundle();
-                params.putString("calculo",calculo.toString());
+                params.putString("resultado", resultado.toString());
+
                 it.putExtras(params);
-                setResult(RESULT_OK,it);
+
+                setResult(RESULT_OK, it);
                 finish();
             }
         });
 
 
-
     }
-
-
-
 }
