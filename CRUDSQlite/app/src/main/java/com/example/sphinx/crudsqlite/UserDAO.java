@@ -122,28 +122,32 @@ public class UserDAO {
         }
     }
 
-    public List<Usuario> consultar(String nome) {
+    public Usuario consulta(String dnome){
+        SQLiteDatabase db = conexao.getReadableDatabase();
+        String whereClause = "nome = ?";
+        String[] whereArgs = new String[] {dnome};
+        Cursor cursor = db.query("USER", new String[]{}, whereClause, whereArgs, null, null, null);
+        String nome, cpf, telefone, email;
+        int id;
+        Usuario user = null;
         try {
-            SQLiteDatabase db = conexao.getReadableDatabase();
-            Cursor cursor = db.query("USER", new String[]{"ID", "NOME", "CPF", "TELEFONE", "EMAIL"},
-                    nome != null && !nome.isEmpty() ? "NOME=?" : null,
-                    nome != null && !nome.isEmpty() ? new String[]{nome} : null, null, null, null);
-
-            List<Usuario> usuarioList = new ArrayList<>();
-
             while (cursor.moveToNext()) {
-                Usuario usuario = new Usuario((int) cursor.getLong(cursor.getColumnIndex("ID")), cursor.getString(cursor.getColumnIndex("NOME")),
-                        cursor.getString(cursor.getColumnIndex("TELEFONE")), cursor.getString(cursor.getColumnIndex("EMAIL")),
-                        cursor.getString(cursor.getColumnIndex("CPF")));
+                id = cursor.getInt(cursor.getColumnIndex("id"));
+                nome = cursor.getString(cursor.getColumnIndex("nome"));
+                cpf = cursor.getString(cursor.getColumnIndex("cpf"));
+                telefone = cursor.getString(cursor.getColumnIndex("telefone"));
+                email = cursor.getString(cursor.getColumnIndex("email"));
 
-                usuarioList.add(usuario);
+                user = new Usuario(id, nome, cpf, telefone, email);
+                db.close();
+
+                return user;
             }
+        }catch (Exception e ){
 
-            db.close();
-
-            return usuarioList;
-        } catch (Exception e) {
-            return new ArrayList<>();
         }
+        return user;
+
     }
+
 }

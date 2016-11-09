@@ -35,8 +35,7 @@
         android:layout_marginStart="10dp"
         android:id="@+id/opBuscar"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:onClick="buscar" />
+        android:layout_alignParentEnd="true" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -90,8 +89,7 @@
         android:id="@+id/excluir"
         android:layout_below="@+id/apEmail"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:onClick="deletarUser" />
+        android:layout_alignParentStart="true" />
 
     <Button
         android:text="Atualizar"
@@ -100,8 +98,7 @@
         android:id="@+id/editar"
         android:layout_above="@+id/voltar"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:onClick="atualizarUser" />
+        android:layout_alignParentEnd="true" />
 
     <Button
         android:text="voltar"
